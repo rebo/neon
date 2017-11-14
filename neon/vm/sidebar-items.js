@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["CallKind",""]],"struct":[["Arguments",""],["FunctionCall",""],["Module",""],["Throw",""]],"trait":[["Lock",""],["This","A type that may be the type of a function's `this` binding."]],"type":[["Call",""],["JsResult",""],["VmResult",""]]});

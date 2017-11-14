@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Lock` trait in crate `neon`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Lock">
+
+    <title>neon::vm::Lock - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait Lock</p><div class="block items"><ul><li><a href="#associated-types">Associated Types</a></li><li><a href="#required-methods">Required Methods</a></li><li><a href="#provided-methods">Provided Methods</a></li><li><a href="#implementors">Implementors</a></li></ul></div><p class='location'><a href='../index.html'>neon</a>::<wbr><a href='index.html'>vm</a></p><script>window.sidebarCurrent = {name: 'Lock', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>neon</a>::<wbr><a href='index.html'>vm</a>::<wbr><a class="trait" href=''>Lock</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/neon/vm.rs.html#321-333' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait Lock: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a> {
+    type <a href='#associatedtype.Internals' class="type">Internals</a>;
+    unsafe fn <a href='#tymethod.expose' class='fnname'>expose</a>(self, state: &amp;mut LockState) -&gt; Self::<a class="type" href="../../neon/vm/trait.Lock.html#associatedtype.Internals" title="type neon::vm::Lock::Internals">Internals</a>;
+
+    fn <a href='#method.grab' class='fnname'>grab</a>&lt;F, T&gt;(self, f: F) -&gt; T<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(Self::<a class="type" href="../../neon/vm/trait.Lock.html#associatedtype.Internals" title="type neon::vm::Lock::Internals">Internals</a>) -&gt; T + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a></span>,
+    { ... }
+}</pre>
+            <h2 id='associated-types' class='small-section-header'>
+              Associated Types<a href='#associated-types' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='associatedtype.Internals' class='method'><span id='Internals.t' class='invisible'><code>type <a href='#associatedtype.Internals' class="type">Internals</a></code></span></h3></div>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='tymethod.expose' class='method'><span id='expose.v' class='invisible'><code>unsafe fn <a href='#tymethod.expose' class='fnname'>expose</a>(self, state: &amp;mut LockState) -&gt; Self::<a class="type" href="../../neon/vm/trait.Lock.html#associatedtype.Internals" title="type neon::vm::Lock::Internals">Internals</a></code></span></h3></div>
+            <h2 id='provided-methods' class='small-section-header'>
+              Provided Methods<a href='#provided-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='method.grab' class='method'><span id='grab.v' class='invisible'><code>fn <a href='#method.grab' class='fnname'>grab</a>&lt;F, T&gt;(self, f: F) -&gt; T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(Self::<a class="type" href="../../neon/vm/trait.Lock.html#associatedtype.Internals" title="type neon::vm::Lock::Internals">Internals</a>) -&gt; T + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a>,&nbsp;</span></code></span></h3></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl&lt;'a, T:&nbsp;<a class="trait" href="../../neon/js/trait.Value.html" title="trait neon::js::Value">Value</a>&gt; Lock for <a class="struct" href="../../neon/mem/struct.LockedHandle.html" title="struct neon::mem::LockedHandle">LockedHandle</a>&lt;'a, T&gt;<span class="where fmt-newline">  type <a href='#associatedtype.Internals' class="type">Internals</a> = <a class="struct" href="../../neon/mem/struct.LockedHandle.html" title="struct neon::mem::LockedHandle">LockedHandle</a>&lt;'a, T&gt;;</span></code></li>
+<li><code>impl&lt;T, U&gt; Lock for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>T, U<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../neon/vm/trait.Lock.html" title="trait neon::vm::Lock">Lock</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;U: <a class="trait" href="../../neon/vm/trait.Lock.html" title="trait neon::vm::Lock">Lock</a>,&nbsp;</span><span class="where fmt-newline">  type <a href='#associatedtype.Internals' class="type">Internals</a> = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>T::<a class="type" href="../../neon/vm/trait.Lock.html#associatedtype.Internals" title="type neon::vm::Lock::Internals">Internals</a>, U::<a class="type" href="../../neon/vm/trait.Lock.html#associatedtype.Internals" title="type neon::vm::Lock::Internals">Internals</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>;</span></code></li>
+<li><code>impl&lt;T&gt; Lock for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../neon/vm/trait.Lock.html" title="trait neon::vm::Lock">Lock</a>,&nbsp;</span><span class="where fmt-newline">  type <a href='#associatedtype.Internals' class="type">Internals</a> = <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;T::<a class="type" href="../../neon/vm/trait.Lock.html#associatedtype.Internals" title="type neon::vm::Lock::Internals">Internals</a>&gt;;</span></code></li>
+<li><code>impl&lt;'a&gt; Lock for &amp;'a mut <a class="struct" href="../../neon/js/binary/struct.JsBuffer.html" title="struct neon::js::binary::JsBuffer">JsBuffer</a><span class="where fmt-newline">  type <a href='#associatedtype.Internals' class="type">Internals</a> = <a class="struct" href="../../cslice/struct.CMutSlice.html" title="struct cslice::CMutSlice">CMutSlice</a>&lt;'a, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;;</span></code></li>
+<li><code>impl&lt;'a&gt; Lock for &amp;'a mut <a class="struct" href="../../neon/js/binary/struct.JsArrayBuffer.html" title="struct neon::js::binary::JsArrayBuffer">JsArrayBuffer</a><span class="where fmt-newline">  type <a href='#associatedtype.Internals' class="type">Internals</a> = <a class="struct" href="../../cslice/struct.CMutSlice.html" title="struct cslice::CMutSlice">CMutSlice</a>&lt;'a, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;;</span></code></li>
+<li><code>impl&lt;'a, T:&nbsp;<a class="trait" href="../../neon/js/class/trait.Class.html" title="trait neon::js::class::Class">Class</a>&gt; Lock for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>T<span class="where fmt-newline">  type <a href='#associatedtype.Internals' class="type">Internals</a> = &amp;'a mut T::<a class="type" href="../../neon/js/class/trait.Class.html#associatedtype.Internals" title="type neon::js::class::Class::Internals">Internals</a>;</span></code></li>
+</ul><script type="text/javascript" async
+                         src="../../implementors/neon/vm/trait.Lock.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "neon";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

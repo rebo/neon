@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ClassDescriptor",""],["JsClass",""]],"trait":[["Class",""]]});

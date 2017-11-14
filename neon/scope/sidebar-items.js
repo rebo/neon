@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ChainedScope",""],["NestedScope",""],["RootScope",""]],"trait":[["Scope",""]]});

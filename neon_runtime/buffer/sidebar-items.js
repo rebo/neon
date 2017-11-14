@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["data","Mutates the `out` argument provided populating the `data` and `len` properties."],["new","Mutates the `out` argument provided to refer to a newly created `node::Buffer` object. Returns `false` if the value couldn't be created."]]});
